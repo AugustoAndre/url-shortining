@@ -46,6 +46,7 @@ section{
 p{
   color: var(--paragraph);
   margin-block: 2rem;
+  line-height: 150%;
 }
 
 h1,h2,h3{
@@ -174,13 +175,13 @@ nav ul .get-started{
   line-height: 150%;
 }
 
-#home form{
+.shorter form{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-#home .shorter{
+.shorter{
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color);
@@ -188,10 +189,9 @@ nav ul .get-started{
   padding: 2rem;
   border-radius: 2rem;
   gap: 1.5rem;
-  margin-block: 10rem 5rem;
 }
 
-#home .shorter input{
+.shorter input{
   height: 5rem;
   border-radius: 0.6rem;
   border: none;
@@ -199,52 +199,52 @@ nav ul .get-started{
   font-weight: 700;
 }
 
-#home .shorter input:first-child{
+.shorter input:first-child{
   color: var(--very-dark);
 }
 
-#home .shorter input:nth-child(2){
+.shorter input:nth-child(2){
   background-color: var(--second-color);
   color: white;
   font-size: 1.8rem;
 }
 
-#home .shorter input:nth-child(2):hover{
+.shorter input:nth-child(2):hover{
   cursor: pointer;
 }
 
-#home .card-link{
+.card-link{
   background-color: white;
   width: 100%;
   padding-block: 1rem;
   border-radius: 1rem;
   padding: 5%;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
-#home p{
+.card-link p{
   margin: initial;
   margin-bottom: 1rem;
 }
 
-#home .card-link p{
+.card-link p{
   color: var(--second-color);
-  text-align: left;
+  text-align: left;;
 }
 
-#home .card-link p:first-of-type{
+.card-link p:first-of-type{
   color: var(--very-dark);
   text-align: left;
 }
 
-#home .card-link .line{
+.card-link .line{
   background-color: var(--bg-light);
   width: 110%;
   height: 1px;
   margin-left: -5%;
 }
 
-#home .card-link button{
+.card-link button{
   border-radius: 4rem;
   margin-inline: auto;
   display: flex;
@@ -262,9 +262,13 @@ nav ul .get-started{
   position: relative;
   text-align: center;
   background-color: var(--bg-light);
-  margin-top: -22rem;
-  padding-top: 18rem;
+  margin-top: -8rem;
+  padding-top: 8rem;
   z-index: -10;
+}
+
+#advicedStatistics h2:first-of-type{
+  margin-top: 10rem;
 }
 
 #advicedStatistics .cards {
@@ -317,7 +321,7 @@ main footer{
 main footer h2{
   color: white;
   font-size: 3rem;
-  text-align: center;;
+  text-align: center;
 }
 
 footer{
