@@ -18,6 +18,7 @@ textarea:focus, input:focus, select:focus {
   --very-dark: hsl(255, 11%, 22%);
   --bg-very-dark: hsl(255, 11%, 22%);
   --bg-light: hsl(0, 0%, 95%);
+  --atencion: hsl(0, 87%, 67%);
 }
 
 html{
@@ -231,8 +232,8 @@ nav ul .get-started{
 .shorter span{
   display: none;
   position: absolute;
-  bottom: 2rem;
-  color: red;
+  bottom: 7rem;
+  color: var(--atencion);
   font-size: 14px;
 }
 
@@ -258,6 +259,17 @@ nav ul .get-started{
 .card-link p:first-of-type{
   color: var(--very-dark);
   text-align: left;
+}
+
+.card-link p:nth-of-type(2):before{
+  content: '';
+  position: relative;
+  width: 110%;
+  left: -5%;
+  height: 1px;
+  background-color: var(--bg-light);
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .card-link button{
@@ -541,6 +553,10 @@ footer .social-media{
     width: 100%;
   }
 
+  .shorter span{
+    bottom: 2rem;
+  }
+
   #advicedStatistics{
     margin-top: -7.5rem;
     padding-top: 7.5rem;
@@ -571,6 +587,10 @@ footer .social-media{
   main .cards-link .card-link p:first-of-type{
     text-align: left;
     width: 100%;
+  }
+
+  .card-link p:nth-of-type(2):before{
+    display: none;
   }
 
   #advicedStatistics .title h2{

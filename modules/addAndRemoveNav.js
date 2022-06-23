@@ -1,6 +1,6 @@
 export default function addAndRemoveNav(){
-  let nav = document.getElementById('nav')
-  let menuToggle = document.querySelector('.menu-toggle')
+  const nav = document.getElementById('nav')
+  const menuToggle = document.querySelector('.menu-toggle')
   
   menuToggle.addEventListener('click', () => {
     nav.classList.toggle('active')
