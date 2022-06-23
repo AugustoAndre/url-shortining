@@ -19,7 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <header>
@@ -32,7 +32,7 @@
             />
           </svg>
 
-          <div onclick="addAndRemoveNav()" class="menu-toggle">
+          <div class="menu-toggle">
             <div class="one"></div>
             <div class="two"></div>
             <div class="three"></div>
@@ -40,22 +40,25 @@
         </div>
         <nav id="nav">
           <ul>
-            <li>
-              <a href="#">Features</a>
-            </li>
-            <li>
-              <a href="#">Pricing</a>
-            </li>
-            <li>
-              <a href="#">Resources</a>
-            </li>
-            <div class="line"></div>
-            <li>
-              <a class="btn-login" href="#">Login</a>
-            </li>
-            <li>
-              <a class="get-started" href="#">Sign Up</a>
-            </li>
+            <div class="col-a">
+              <li>
+                <a href="#">Features</a>
+              </li>
+              <li>
+                <a href="#">Pricing</a>
+              </li>
+              <li>
+                <a href="#">Resources</a>
+              </li>
+            </div>
+            <div class="col-b">
+              <li>
+                <a class="btn-login" href="#">Login</a>
+              </li>
+              <li>
+                <a class="get-started" href="#">Sign Up</a>
+              </li>
+           </div>
           </ul>
         </nav>
       </div>
@@ -64,49 +67,54 @@
     <main>
       <section id="home">
         <div class="wrapper">
-          <img
-            src="./images/illustration-working.svg"
-            alt="Ilustração de uma pessoa a trabalhar"
-          />
-          <h1>More than just shorter links</h1>
-          <p>
-            Build your brand's recognition and get detailed insights on how your
-            links are performing.
-          </p>
-          <a class="get-started" href="#">Get Started</a>
-          
+          <div class="col-a">
+            <img
+              src="./images/illustration-working.svg"
+              alt="Ilustração de uma pessoa a trabalhar"
+            />
+          </div>
+          <div class="col-b">
+            <h1>More than just shorter links</h1>
+            <p>
+              Build your brand's recognition and get detailed insights on how your
+              links are performing.
+            </p>
+            <a class="get-started" href="#">Get Started</a>
+          </div>
         </div>
       </section>
       <div class="wrapper">
         <div class="shorter">
           <form>
-          <input required type="text" placeholder="Shorten a link here..." />
+          <input id="inputShorten" required type="text" autocomplete="off"
+          placeholder="Shorten a link here..." />
           <input type="submit" value="Shorten It!" />
+          <span id="error">Please add a link</span>
           </form>
         </div>
-    </div>
+      </div>
       <section id="advicedStatistics">
         <div class="wrapper">
-          <div>
+          <div class="cards-link">
             <div class="card-link">
               <p>www.google.com</p>
-              <div class="line"></div>
               <p>www.encurted.com</p>
               <button class="get-started">Copy</button>
             </div>
 
             <div class="card-link">
               <p>www.google.com</p>
-              <div class="line"></div>
               <p>www.encurted.com</p>
               <button class="get-started">Copy</button>
             </div>
           </div>
-          <h2>Advanced Statistics</h2>
-          <p>
-            Track how your links are performing across the web with our advanced
-            statistics dashboard.
-          </p>
+          <div class="title">
+            <h2>Advanced Statistics</h2>
+            <p>
+              Track how your links are performing across the web with our advanced
+              statistics dashboard.
+            </p>
+         </div>
           <div class="cards">
             <div class="card">
               <div class="back-card">
@@ -145,10 +153,10 @@
           </div>
         </div>
       </section>
-      <footer>
+      <section id="footer">
         <h2>Boost your links today</h2>
         <a class="get-started" href="#">Get Started</a>
-      </footer>
+      </section>
     </main>
     <footer>
       <a href="#">
@@ -234,6 +242,6 @@
       </ul>
     </footer>
     </div>
-    <script src="./script.js"></script>r
+    <script type="module" src="./main.js" ></script>
   </body>
 </html>

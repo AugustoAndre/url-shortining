@@ -106,26 +106,41 @@ nav.active {
 nav ul{
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding-block: 3rem;
   gap: 3rem;
 }
 
-nav ul li{
-  list-style: none;
+nav ul .col-a,
+nav ul .col-b{
   width: 100%;
-  text-align: center;
+}
+
+nav ul .col-b::before{
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: var(--paragraph);
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+nav ul li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-top: 3rem;
+}
+
+nav ul li:first-child{
+  margin-top: 0;
 }
 
 nav ul li a{
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 700;
-}
-
-nav ul .line{
-  background-color: var(--paragraph);
-  width: 90%;
-  height: 1px;
 }
 
 nav ul .get-started{
@@ -182,12 +197,15 @@ nav ul .get-started{
 }
 
 .shorter{
+  position: relative;
   display: flex;
   flex-direction: column;
   background-color: var(--primary-color);
-  background-image: url('./images/bg-shorten-mobile.svg');
+  background-image: url('../images/bg-shorten-mobile.svg');
+  background-size: cover;
+  background-position: bottom;
   padding: 2rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   gap: 1.5rem;
 }
 
@@ -201,6 +219,7 @@ nav ul .get-started{
 
 .shorter input:first-child{
   color: var(--very-dark);
+  border: 2px solid;
 }
 
 .shorter input:nth-child(2){
@@ -209,8 +228,12 @@ nav ul .get-started{
   font-size: 1.8rem;
 }
 
-.shorter input:nth-child(2):hover{
-  cursor: pointer;
+.shorter span{
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  color: red;
+  font-size: 14px;
 }
 
 .card-link{
@@ -237,13 +260,6 @@ nav ul .get-started{
   text-align: left;
 }
 
-.card-link .line{
-  background-color: var(--bg-light);
-  width: 110%;
-  height: 1px;
-  margin-left: -5%;
-}
-
 .card-link button{
   border-radius: 4rem;
   margin-inline: auto;
@@ -259,15 +275,13 @@ nav ul .get-started{
 }
 
 #advicedStatistics{
-  position: relative;
   text-align: center;
   background-color: var(--bg-light);
   margin-top: -8rem;
   padding-top: 8rem;
-  z-index: -10;
 }
 
-#advicedStatistics h2:first-of-type{
+#advicedStatistics .title h2{
   margin-top: 10rem;
 }
 
@@ -311,14 +325,14 @@ nav ul .get-started{
   top: -2rem;
 }
 
-main footer{
+section#footer{
   background-color: var(--primary-color);
-  background-image: url('./images/bg-boost-mobile.svg');
+  background-image: url('../images/bg-boost-mobile.svg');
   background-size: cover;
   padding: 8rem 4rem;
 }
 
-main footer h2{
+section#footer h2{
   color: white;
   font-size: 3rem;
   text-align: center;
@@ -365,4 +379,277 @@ footer ul li a{
 footer .social-media{
   flex-direction: row;
   gap: 2.5rem;
+}
+
+@media (min-width: 1024px){
+
+  .wrapper{
+    width: 80%;
+  }
+
+ .get-started:hover{
+    color: white;
+    background-color: hsl(180, 66%, 70%);
+  }
+
+  .col-a{
+    grid-area: a;
+  }
+
+  .col-b{
+    grid-area: b;
+  }
+
+  header{
+    margin-top: 3rem;
+  }
+
+  header .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header .content{
+    margin-top: 0;
+  }
+    
+  header nav{
+    position: initial;
+    width: fit-content;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+  header nav ul{
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0;
+    gap: 0;
+  }
+
+  header nav ul .col-b::before{
+    display: none;
+  }
+
+  header nav ul .col-a,
+  header nav ul .col-b{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  header nav ul .col-a li,
+  header nav ul .col-b li{
+    margin: 0;
+    padding: 0;
+  }
+
+  header nav ul .col-b {
+    justify-content: flex-end;
+  }
+
+  header nav ul .col-a li:first-of-type{
+    margin-left: 4rem;
+  }
+
+  header nav ul li a{
+    color: var(--paragraph);
+    transition: .2s;
+  }
+
+  header nav ul li a:hover{
+    color: var(--very-dark);
+  }
+
+  header nav ul .get-started{
+    width: initial;
+    padding-inline: 3rem;
+    padding-block: 1rem;
+  }
+
+  .menu-toggle{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  
+  main section#home .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'b a';
+  }
+
+  main section#home .wrapper .col-a img{
+    width: 130%;
+    margin-left: 10rem;
+  }
+
+  main section#home .wrapper .col-b{
+    align-self: center;
+  }
+
+  main section#home .wrapper .col-b p,
+  main section#home .wrapper .col-b h1{
+    text-align: left;
+    width: 95%;
+  }
+
+  main section#home .wrapper .col-b h1{
+    font-size: 6rem;
+    line-height: 120%;
+  }
+
+  main section#home .wrapper .col-b a{
+    margin-inline: initial;
+  }
+
+  main section#home .get-started{
+    transition: .2s;
+  }
+
+  main .shorter{
+    width: 100%;
+    padding: 5rem;
+  }
+
+  main .shorter input{
+  height: 6rem;
+  font-size: 2.4rem;
+}
+
+
+  main .shorter form{
+    flex-direction: row;
+  }
+
+  main .shorter input:nth-child(2){
+    width: 20rem;
+  }
+
+  main .shorter input:nth-child(2):hover{
+    cursor: pointer;
+    background-color: hsl(180, 66%, 70%);
+    transition: .2s;
+  }
+  
+  main .shorter input:first-child{
+    width: 100%;
+  }
+
+  #advicedStatistics{
+    margin-top: -7.5rem;
+    padding-top: 7.5rem;
+  }
+
+  main .cards-link .card-link{
+    display: flex;
+    padding: 1% 2%;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10;
+  }
+
+  main .cards-link .card-link button{
+  margin-inline: initial;
+  width: 10%;
+  margin-left: 2rem;
+  }
+
+  main .cards-link .card-link button:hover{
+    cursor: pointer;
+  }
+
+  main .cards-link .card-link p{
+    margin: 0;
+  }
+
+  main .cards-link .card-link p:first-of-type{
+    text-align: left;
+    width: 100%;
+  }
+
+  #advicedStatistics .title h2{
+    margin-inline: auto;
+    font-size: 4rem;
+  }
+
+  #advicedStatistics .title p{
+    margin-inline: auto;
+    text-align: center;
+    width: 50%;
+  }
+
+  #advicedStatistics .cards{
+    display: flex;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  #advicedStatistics .cards .card{
+    z-index: 1;
+  }
+
+  #advicedStatistics .cards .card:first-of-type{
+    height: fit-content;
+  }
+
+  #advicedStatistics .cards .card:nth-of-type(3){
+    margin-top: 5rem;
+    height: fit-content;
+  }
+
+  #advicedStatistics .cards .card:nth-of-type(5){
+    margin-top: 10rem;
+  }
+
+  #advicedStatistics .cards .card .back-card{
+    margin-inline: initial;
+    border-radius: 50%;; 
+  }
+
+  #advicedStatistics .cards h3{
+    margin-top: -2rem;
+  }
+
+  #advicedStatistics .cards p{
+    font-size: 1.4rem;
+  }
+
+  #advicedStatistics .separator{
+    width: 2rem;
+    top: 10rem;
+    transform:rotate(90deg);
+    z-index: 0;
+  }
+  
+  section#footer a:hover{
+    transition: .2s;
+  }
+
+  footer{
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline: 10rem;
+    align-items: flex-start;
+  }
+
+  footer section{
+    padding: 0;
+  }
+
+  footer section ul li a:hover{
+    color: var(--second-color);
+    transition: .2s;
+  }
+
+  footer a svg path:hover{
+    fill: var(--second-color);
+    transition: .2s;
+  }
+
 }
