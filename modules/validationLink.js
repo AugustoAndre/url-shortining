@@ -7,8 +7,11 @@ export default function validationLink() {
       event.preventDefault()
       const inputShorten = document.getElementById('inputShorten')
       const error = document.getElementById('error')
+      const divCards = document.getElementById('cards-link')
+
       inputShorten.style.borderColor = 'var(--atencion)'
       error.style.display = 'initial'
+      divCards.classList.add('hide')
     },
     false
   )

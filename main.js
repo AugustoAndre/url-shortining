@@ -1,7 +1,7 @@
 import addAndRemoveNav from './modules/addAndRemoveNav.js'
 import validationLink from './modules/validationLink.js'
-import toDoListLinks from './modules/toDoListLinks.js'
+import shorteningLink from './modules/shorteningLink.js'
 
 addAndRemoveNav()
+shorteningLink()
 validationLink()
-toDoListLinks()

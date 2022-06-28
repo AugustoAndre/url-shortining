@@ -85,27 +85,22 @@
       </section>
       <div class="wrapper">
         <div class="shorter">
-          <form>
-          <input id="inputShorten" type="url" required type="text" autocomplete="off"
-          placeholder="Shorten a link here..." />
-          <input id="inputSubmit" type="submit" value="Shorten It!" />
-          <span id="error">Please add a link</span>
+          <form onsubmit="return false">
+            <input id="inputShorten" type="url" required type="text" autocomplete="off"
+            placeholder="Shorten a link here..." />
+            <input id="inputSubmit" type="submit" value="Shorten It!" />
+            <span id="error">Please add a link</span>
           </form>
         </div>
       </div>
       <section id="advicedStatistics">
         <div class="wrapper">
-          <div class="cards-link">
+          <div class="cards-link hide" id="cards-link">
             <div class="card-link">
-              <p>www.google.com</p>
-              <p>www.encurted.com</p>
-              <button class="get-started">Copy</button>
-            </div>
-
-            <div class="card-link">
-              <p>www.google.com</p>
-              <p>www.encurted.com</p>
-              <button class="get-started">Copy</button>
+              <p id="mainLink"></p>
+              <p id="linkShorted"></p>
+              <progress id="progressBar"></progress>
+              <button id="btnCopy" class="get-started">Copy</button>
             </div>
           </div>
           <div class="title">
